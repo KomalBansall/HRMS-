@@ -1,0 +1,82 @@
+const mongoose = require("mongoose");
+const employeeModel = mongoose.model(
+  "Employee",
+  mongoose.Schema(
+    {
+      employeeId: {
+        type: String,
+        unique: true,
+      },
+
+      employeeName: {
+        type: String,
+      },
+      password: {
+        type: String,
+        required: true,
+      },
+      role: {
+        type: Number,
+      },
+      email: {
+        type: String,
+      },
+      status: {
+        type: Boolean,
+      },
+      address: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
+      state: {
+        type: String,
+      },
+      pinCode: {
+        type: String,
+      },
+      contactNo: {
+        type: Number,
+      },
+      date_of_joining: {
+        type: String,
+      },
+      date_of_leaving: {
+        type: String,
+      },
+      company_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Company",
+      },
+
+      admin_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Admin",
+      },
+      hr_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Hrteam",
+      },
+      designation_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Designation",
+      },
+      department_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Department",
+      },
+      reporting_manager_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "Hrteam",
+      },
+      documents: {
+        type: String,
+      },
+    },
+
+    { timestamps: true }
+  )
+);
+
+module.exports = employeeModel;
